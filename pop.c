@@ -119,7 +119,7 @@ int main( int argc, char* argv[] )
 		if (!strcmp(argv[1], "-h") || !strcmp(argv[1], "--help"))
 		{
 			printf("Usage: %s [option]\n\n", argv[0]);
-			printf("Where option can be integer number of playing notes of Pi (max. 1000)\n");
+			printf("Option can be either integer number of playing notes of Pi (max. 1000)\n");
 			printf("or -h|--help for this message\n");
 			return 0;
 		}
@@ -132,7 +132,7 @@ int main( int argc, char* argv[] )
 			if (!isdigit(argument[i]))
 			{
 				printf("Usage: %s [option]\n\n", argv[0]);
-				printf("Where option can be integer number of playing notes of Pi (max. 1000)\n");
+				printf("Option can be either integer number of playing notes of Pi (max. 1000)\n");
 				printf("or -h|--help for this message\n");
 				return 1;
 			}
@@ -144,7 +144,7 @@ int main( int argc, char* argv[] )
 			//If number of notes is more than 1000 - show error message and quit
 			if (pi_length > 1000)
 			{
-				printf("Cannot to play so much... Pi is so hard!");
+				printf("Cannot to play so much... Pi is so hard!\n");
 				return 1;
 			}
 			//If number of notes is more than 100 - show warning message and request of confirmation
@@ -164,18 +164,18 @@ int main( int argc, char* argv[] )
 	//Initialize SDL
     if( init() == 1 )
     {
-		printf("Cannot initialize SDL!");
+		printf("Cannot initialize SDL!\n");
         return 2;
     }
-    printf("%s\n", "Initialization... done");
+    printf("Initialization... done\n");
 
     //Load the files
     if( load_files() == 1 )
     {
-		printf("Cannot load music files!");
+		printf("Cannot load music files!\n");
         return 3;
     }
-    printf("%s\n", "Loading... done");
+    printf("Loading... done\n");
     
     //Read Pi from array Pi[] and play corresponding notes
     //If some wrong with playing - show error message and jump to next note
